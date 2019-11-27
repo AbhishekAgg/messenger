@@ -1,0 +1,1 @@
+export const messageEndpoint = 'https://app.squadrun.co/web_prototype/v1/messages';

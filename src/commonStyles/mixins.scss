@@ -1,0 +1,140 @@
+@mixin margin($args...) {
+  margin-top: nth($args, 1);
+  @if length($args) == 4 {
+    margin-right: nth($args, 2);
+    margin-bottom: nth($args, 3);
+    margin-left: nth($args, 4);
+  } @else if length($args) == 3 {
+    margin-right: nth($args, 2);
+    margin-bottom: nth($args, 3);
+    margin-left: nth($args, 2);
+  } @else if length($args) == 2 {
+    margin-right: nth($args, 2);
+    margin-bottom: nth($args, 1);
+    margin-left: nth($args, 2);
+  } @else {
+    margin-right: nth($args, 1);
+    margin-bottom: nth($args, 1);
+    margin-left: nth($args, 1);
+  }
+}
+  
+@mixin padding($args...) {
+  padding-top: nth($args, 1);
+  @if length($args) == 4 {
+    padding-right: nth($args, 2);
+    padding-bottom: nth($args, 3);
+    padding-left: nth($args, 4);
+  } @else if length($args) == 3 {
+    padding-right: nth($args, 2);
+    padding-bottom: nth($args, 3);
+    padding-left: nth($args, 2);
+  } @else if length($args) == 2 {
+    padding-right: nth($args, 2);
+    padding-bottom: nth($args, 1);
+    padding-left: nth($args, 2);
+  } @else {
+    padding-right: nth($args, 1);
+    padding-bottom: nth($args, 1);
+    padding-left: nth($args, 1);
+  }
+}
+  
+@mixin border-radius($args...) {
+  border-top-left-radius: nth($args, 1);
+  @if length($args) == 4 {
+    border-top-right-radius: nth($args, 2);
+    border-bottom-right-radius: nth($args, 3);
+    border-bottom-left-radius: nth($args, 4);
+  } @else if length($args) == 3 {
+    border-top-right-radius: nth($args, 2);
+    border-bottom-right-radius: nth($args, 3);
+    border-bottom-left-radius: nth($args, 2);
+  } @else if length($args) == 2 {
+    border-top-right-radius: nth($args, 2);
+    border-bottom-right-radius: nth($args, 1);
+    border-bottom-left-radius: nth($args, 2);
+  } @else {
+    border-top-right-radius: nth($args, 1);
+    border-bottom-right-radius: nth($args, 1);
+    border-bottom-left-radius: nth($args, 1);
+  }
+}
+
+@mixin border($width, $style, $color) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+}
+
+@mixin border-top($width, $style, $color) {
+  border-top-width: $width;
+  border-top-style: $style;
+  border-top-color: $color;
+}
+
+@mixin border-right($width, $style, $color) {
+  border-right-width: $width;
+  border-right-style: $style;
+  border-right-color: $color;
+}
+
+@mixin border-bottom($width, $style, $color) {
+  border-bottom-width: $width;
+  border-bottom-style: $style;
+  border-bottom-color: $color;
+}
+
+@mixin border-left($width, $style, $color) {
+  border-left-width: $width;
+  border-left-style: $style;
+  border-left-color: $color;
+}
+
+@mixin font-style($size, $color, $weight: false, $height: false) {
+  font-size: $size;
+  color: $color;
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    line-height: $height;
+  }
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin align($content, $items) {
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin width($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin popup($position, $top: false, $right: false, $bottom: false, $left: false) {
+  position: $position;
+  @if $top { top: $top;}
+  @if $right { right: $right;}
+  @if $bottom { bottom: $bottom;}
+  @if $left { left: $left;
+  }
+}
+
+@mixin globalHolder ($direction: false, $background: false, $radius: false, $wrap: false, $flex: false){
+  @if $direction { flex-direction: $direction;}
+  @if $background { background-color: $background;}
+  @if $radius { border-radius: $radius;}
+  @if $wrap { flex-wrap: $wrap;}
+  @if $flex { flex: $flex;}
+}
+
+@mixin gradient ($direction, $firstcolor, $lastcolor){
+  background-image: linear-gradient(to $direction, $firstcolor, $lastcolor);
+}

@@ -1,0 +1,2 @@
+export const BRAND_LOGO = 'https://en.facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png';
+export const SEARCH_ICON = 'https://cdn4.vectorstock.com/i/1000x1000/33/88/magnifying-glass-symbol-search-icon-outline-vector-19873388.jpg';
